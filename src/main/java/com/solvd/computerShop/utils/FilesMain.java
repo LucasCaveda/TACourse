@@ -30,7 +30,7 @@ public class FilesMain {
             LOGGER1.debug(count.length-1);
             writeFile("The word \""+word+ "\" was found "+(count.length-1)+" times in the file\n",result );
         } catch (IOException e) {
-            LOGGER1.debug(e.getMessage());
+            LOGGER1.info(e.getMessage());
         }
     }
 
@@ -40,7 +40,7 @@ public class FilesMain {
         try {
             writeStringToFile(file, msg, (String) null, true);
         } catch (IOException e) {
-            LOGGER1.debug(e.getMessage());
+            LOGGER1.info(e.getMessage());
         }
     }
 }
