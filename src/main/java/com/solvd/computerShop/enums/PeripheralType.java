@@ -1,5 +1,9 @@
 package com.solvd.computerShop.enums;
 
 public enum PeripheralType{
-    OUTPUT, INPUT
+    OUTPUT(true),
+    INPUT(true);
+
+    PeripheralType(Boolean switchedOn){
+    }
 }

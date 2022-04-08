@@ -1,11 +1,11 @@
-package com.solvd.computerShop.utils;
+package com.solvd.computerShop.collections;
 
 import com.solvd.computerShop.computer.DesktopComputer;
 import com.solvd.computerShop.computer.Laptop;
+import com.solvd.computerShop.enums.ConnectionType;
 import com.solvd.computerShop.enums.GenderType;
+import com.solvd.computerShop.enums.PeripheralType;
 import com.solvd.computerShop.generics.GenericLinkedList;
-import com.solvd.computerShop.peripheral.InputPeripheral;
-import com.solvd.computerShop.peripheral.OutputPeripheral;
 import com.solvd.computerShop.peripheral.Peripheral;
 import com.solvd.computerShop.person.Client;
 import com.solvd.computerShop.person.ManagerEmployee;
@@ -31,9 +31,9 @@ public class CollectionsMain {
 
         HashSet<Peripheral> peripheralsSet = new HashSet<>();
 
-        InputPeripheral mouse = new InputPeripheral("bluetooth", true);
-        InputPeripheral keyboard = new InputPeripheral("usb", true);
-        OutputPeripheral screen = new OutputPeripheral("hdmi", false);
+        Peripheral mouse = new Peripheral(PeripheralType.INPUT, ConnectionType.BLUETOOTH);
+        Peripheral keyboard = new Peripheral(PeripheralType.INPUT, ConnectionType.USB);
+        Peripheral screen = new Peripheral(PeripheralType.OUTPUT, ConnectionType.HDMI);
 
         peripheralsSet.add(mouse);
         peripheralsSet.add(keyboard);

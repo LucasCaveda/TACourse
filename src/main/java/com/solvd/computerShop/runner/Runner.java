@@ -2,15 +2,12 @@ package com.solvd.computerShop.runner;
 
 import com.solvd.computerShop.computer.DesktopComputer;
 import com.solvd.computerShop.computer.Laptop;
+import com.solvd.computerShop.enums.GenderType;
 import com.solvd.computerShop.exceptions.InvalidWorkingStatus;
-import com.solvd.computerShop.computer.ComputerComponent;
 import com.solvd.computerShop.generics.GenericLinkedList;
-import com.solvd.computerShop.person.Employee;
 import com.solvd.computerShop.shop.WorkingSpaces;
 import com.solvd.computerShop.tool.Tool;
 import com.solvd.computerShop.peripheral.InputPeripheral;
-import com.solvd.computerShop.peripheral.OutputPeripheral;
-import com.solvd.computerShop.peripheral.Peripheral;
 import com.solvd.computerShop.person.Client;
 import com.solvd.computerShop.person.ManagerEmployee;
 import com.solvd.computerShop.person.RepairEmployee;
@@ -19,27 +16,28 @@ import com.solvd.computerShop.shop.ComputerRepairShop;
 import java.util.*;
 
 import static com.solvd.computerShop.computer.DesktopComputer.createDesktopComputer;
+import static com.solvd.computerShop.computer.Laptop.createLaptop;
 import static com.solvd.computerShop.utils.LoggerClass.LOGGER1;
 
 
-public class Runner {/*
+public class Runner {
 
     public static void main(String[] args) throws InvalidWorkingStatus {
         Collection<Tool> toolsSet = null;
+        DesktopComputer desktopComputer = createDesktopComputer();
+        Laptop laptop = createLaptop();
 
-
-        Client client1 = new Client("Carlos", "Perez", "32415142", 'M', 31, desktopComputer);
-        Client client2 = new Client("Juan", "Marozzi", "40412423", 'M', 24, laptop);
-        RepairEmployee employee1 = new RepairEmployee("Gerardo", "Ramirez", "39123921", 'M', 25, 0002, true, 1500, 1, toolsSet, true);
-        RepairEmployee employee2 = new RepairEmployee("Mavel", "Urquiza", "33324531", 'F', 35, 0003, false, 1500, 1, toolsSet, true);
-        RepairEmployee employee3 = new RepairEmployee("Oscar", "Galatea", "42416473", 'M', 22, 0004, true, 1500, 1, toolsSet, true);
-        RepairEmployee employee4 = new RepairEmployee("Sebastian", "Guarnizo", "39123921", 'M', 25, 0005, false, 1500, 1, toolsSet, true);
+        Client client1 = new Client("Carlos", "Perez", "32415142", 31, GenderType.MALE, desktopComputer);
+        Client client2 = new Client("Juan", "Marozzi", "40412423", 24, GenderType.MALE, laptop);
+        RepairEmployee employee1 = new RepairEmployee("Gerardo", "Ramirez", "39123921", 24, GenderType.MALE, 0002, 1500, true, 1, toolsSet, true);
+        RepairEmployee employee2 = new RepairEmployee("Mabel", "Urquiza", "33324531", 32, GenderType.FEMALE, 0005, 1500,false, 1, null, false);
+        RepairEmployee employee3 = new RepairEmployee("Oscar", "Galatea", "42416473", 22, GenderType.MALE, 0003, 1500, true, 1, toolsSet, true);
+        RepairEmployee employee4 = new RepairEmployee("Sebastian", "Guarnizo", "39123921", 25, GenderType.MALE, 0004,1500, false, 1, null, false);
+        ManagerEmployee manager = new ManagerEmployee("Florencia", "Salvador", "33415678", 33, GenderType.FEMALE, 0001, 3000, true, true);
         Tool screwdriver = new Tool("tighten and loosen screws");
         Tool welder = new Tool("merge wires");
         Tool gripper = new Tool("cut wires");
-        ManagerEmployee manager = new ManagerEmployee("Florencia", "Salvador", "33415678", 'F', 34, 0001, true, 3000, true);
 
-        //I replaced the employee array with a HashSet
         GenericLinkedList<RepairEmployee> employees = new GenericLinkedList<>();
 
         WorkingSpaces workingSpaces = new WorkingSpaces(4, 4);
@@ -56,7 +54,7 @@ public class Runner {/*
         toolsSet.add(gripper);
 
 
-        //ComputerRepairShop computerRepairShop = new ComputerRepairShop("Computer service", "Estrada 1455", manager, employees, workSpaces);
+        ComputerRepairShop computerRepairShop = new ComputerRepairShop("Computer service", "Estrada 1455", manager, employees, workingSpaces);
 
         Queue<Client> clientQueue = new LinkedList<>();
         clientQueue.add(client1);
@@ -82,5 +80,5 @@ public class Runner {/*
 
 
 
-*/
+
 }

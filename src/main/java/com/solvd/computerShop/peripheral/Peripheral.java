@@ -1,20 +1,34 @@
 package com.solvd.computerShop.peripheral;
 
+import com.solvd.computerShop.enums.ConnectionType;
+import com.solvd.computerShop.enums.GenderType;
+import com.solvd.computerShop.enums.PeripheralType;
+
 import java.util.Collection;
 
 public class Peripheral {
-    private String connection;
+    private Enum <PeripheralType> peripheralType;
+    private Enum <ConnectionType> connectionType;
 
-    public Peripheral(String connection) {
-        this.connection = connection;
+    public Peripheral(Enum<PeripheralType> peripheralType, Enum<ConnectionType> connectionType) {
+        this.peripheralType = peripheralType;
+        this.connectionType = connectionType;
     }
 
-    public String getConnection() {
-        return connection;
+    public Enum<PeripheralType> getPeripheralType() {
+        return peripheralType;
     }
 
-    public void setConnection(String connection) {
-        this.connection = connection;
+    public void setPeripheralType(Enum<PeripheralType> peripheralType) {
+        this.peripheralType = peripheralType;
+    }
+
+    public Enum<ConnectionType> getConnectionType() {
+        return connectionType;
+    }
+
+    public void setConnectionType(Enum<ConnectionType> connectionType) {
+        this.connectionType = connectionType;
     }
 }
 
