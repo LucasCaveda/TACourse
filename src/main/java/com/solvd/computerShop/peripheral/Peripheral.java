@@ -1,10 +1,8 @@
 package com.solvd.computerShop.peripheral;
 
 import com.solvd.computerShop.enums.ConnectionType;
-import com.solvd.computerShop.enums.GenderType;
 import com.solvd.computerShop.enums.PeripheralType;
 
-import java.util.Collection;
 
 public class Peripheral {
     private Enum <PeripheralType> peripheralType;

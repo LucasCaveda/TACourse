@@ -4,39 +4,42 @@ import com.solvd.computerShop.enums.GenderType;
 import com.solvd.computerShop.interfaces.IPerson;
 import com.solvd.computerShop.exceptions.InvalidDni;
 import com.solvd.computerShop.exceptions.InvalidWord;
-import static com.solvd.computerShop.utils.LoggerClass.LOGGER1;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 import static com.solvd.computerShop.validationFunctions.Validations.*;
 
 public abstract class Person implements IPerson {
-    private Enum <GenderType> genderType;
+    private Enum<GenderType> genderType;
     private String firstName;
     private String lastName;
     private String dni;
     private int age;
 
+    private static final Logger LOGGER1 = LogManager.getLogger(Person.class.getName());
+
     public Person(String firstName, String lastName, String dni, int age, Enum<GenderType> genderType) {
         try {
-            if(checkWord(firstName)){
+            if (checkWord(firstName)) {
                 this.firstName = firstName;
             }
         } catch (InvalidWord e) {
             e.getMessage();
         }
         try {
-            if(checkWord(lastName)){
+            if (checkWord(lastName)) {
                 this.lastName = lastName;
             }
         } catch (InvalidWord e) {
             e.getMessage();
         }
         this.genderType = genderType;
-        if (checkAge(age)){
+        if (checkAge(age)) {
             this.age = age;
         }
         try {
-            if (checkDni(dni)){
+            if (checkDni(dni)) {
                 this.dni = dni;
             }
         } catch (InvalidDni e) {
@@ -46,8 +49,8 @@ public abstract class Person implements IPerson {
     }
 
     @Override
-    public void sayHello(String firstName){
-        LOGGER1.debug("Hello, my name is "+firstName+".");
+    public void sayHello(String firstName) {
+        LOGGER1.debug("Hello, my name is " + firstName + ".");
     }
 
     public String getFirstName() {

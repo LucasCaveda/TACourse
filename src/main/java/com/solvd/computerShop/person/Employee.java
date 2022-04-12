@@ -3,7 +3,8 @@ package com.solvd.computerShop.person;
 import com.solvd.computerShop.enums.GenderType;
 import com.solvd.computerShop.interfaces.IEmployee;
 import com.solvd.computerShop.exceptions.InvalidEmployeeId;
-import static com.solvd.computerShop.utils.LoggerClass.LOGGER1;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class Employee extends Person implements IEmployee {
@@ -11,11 +12,13 @@ public class Employee extends Person implements IEmployee {
     private int salary;
     private boolean working;
 
+    private static final Logger LOGGER1 = LogManager.getLogger(Employee.class.getName());
+
     public Employee(String firstName, String lastName, String dni, int age, Enum<GenderType> genderType, int employeeId, int salary, boolean working) {
         super(firstName, lastName, dni, age, genderType);
-        if(employeeId>0){
+        if (employeeId > 0) {
             this.employeeId = employeeId;
-        }else throw new InvalidEmployeeId();
+        } else throw new InvalidEmployeeId();
         this.salary = salary;
         this.working = working;
     }
@@ -45,9 +48,9 @@ public class Employee extends Person implements IEmployee {
     }
 
     @Override
-    public void working(){
-        if (working){
-            LOGGER1.debug(getFirstName()+" is working.");
+    public void working() {
+        if (working) {
+            LOGGER1.debug(getFirstName() + " is working.");
         }
     }
 

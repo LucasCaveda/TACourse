@@ -1,7 +1,5 @@
 package com.solvd.computerShop.computer;
 
-
-import com.solvd.computerShop.peripheral.InputPeripheral;
 import com.solvd.computerShop.peripheral.Peripheral;
 
 import java.util.HashSet;

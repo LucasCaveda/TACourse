@@ -1,10 +1,13 @@
 package com.solvd.computerShop.generics;
 
-import static com.solvd.computerShop.utils.LoggerClass.LOGGER1;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class GenericLinkedList <T>{
+public class GenericLinkedList<T> {
     private Node<T> head;
     //This Generic class works with FIFO. First in first out
+
+    private static final Logger LOGGER1 = LogManager.getLogger(GenericLinkedList.class.getName());
 
     //Insert at final of the queue
     public void insert(T data) {

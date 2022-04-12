@@ -9,7 +9,8 @@ import com.solvd.computerShop.tool.Tool;
 import com.solvd.computerShop.interfaces.ICleanComputer;
 import com.solvd.computerShop.interfaces.IComputerRepair;
 import com.solvd.computerShop.exceptions.InvalidWorkingStatus;
-import static com.solvd.computerShop.utils.LoggerClass.LOGGER1;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Collection;
 import java.util.Queue;
@@ -19,6 +20,8 @@ public class RepairEmployee extends Employee implements IComputerRepair, ICleanC
     private int taskQueue;
     private Collection<Tool> tools;
     private Boolean repairing;
+
+    private static final Logger LOGGER1 = LogManager.getLogger(RepairEmployee.class.getName());
 
     public RepairEmployee(String firstName, String lastName, String dni, int age, Enum<GenderType> genderType, int employeeId, int salary, boolean working, int taskQueue, Collection<Tool> tools, Boolean repairing) {
         super(firstName, lastName, dni, age, genderType, employeeId, salary, working);

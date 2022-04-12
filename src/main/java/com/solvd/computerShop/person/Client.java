@@ -3,7 +3,7 @@ package com.solvd.computerShop.person;
 import com.solvd.computerShop.computer.Computer;
 import com.solvd.computerShop.enums.GenderType;
 
-public class Client extends Person{
+public class Client extends Person {
     private Computer computer;
 
     public Client(String firstName, String lastName, String dni, int age, Enum<GenderType> genderType, Computer computer) {

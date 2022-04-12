@@ -1,15 +1,19 @@
 package com.solvd.computerShop.utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.File;
 import java.io.IOException;
 
-import static com.solvd.computerShop.utils.LoggerClass.LOGGER1;
 import static org.apache.commons.io.FileUtils.*;
 
 
 public class FilesMain {
     private final static String PATH_TEXT_FILE = "src/main/resources/ImTheHighway.txt";
     private final static String PATH_RESULT_FILE = "src/main/resources/countResult.txt";
+
+    private static final Logger LOGGER1 = LogManager.getLogger(FilesMain.class.getName());
 
     public static void main(String[] args) throws IOException {
         File text = new File(PATH_TEXT_FILE);

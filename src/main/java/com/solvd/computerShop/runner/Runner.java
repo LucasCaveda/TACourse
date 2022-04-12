@@ -7,22 +7,25 @@ import com.solvd.computerShop.exceptions.InvalidWorkingStatus;
 import com.solvd.computerShop.generics.GenericLinkedList;
 import com.solvd.computerShop.shop.WorkingSpaces;
 import com.solvd.computerShop.tool.Tool;
-import com.solvd.computerShop.peripheral.InputPeripheral;
 import com.solvd.computerShop.person.Client;
 import com.solvd.computerShop.person.ManagerEmployee;
 import com.solvd.computerShop.person.RepairEmployee;
 import com.solvd.computerShop.shop.ComputerRepairShop;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
 import static com.solvd.computerShop.computer.DesktopComputer.createDesktopComputer;
 import static com.solvd.computerShop.computer.Laptop.createLaptop;
-import static com.solvd.computerShop.utils.LoggerClass.LOGGER1;
 
 
 public class Runner {
 
+    private static final Logger LOGGER1 = LogManager.getLogger(Runner.class.getName());
+
     public static void main(String[] args) throws InvalidWorkingStatus {
+
         Collection<Tool> toolsSet = null;
         DesktopComputer desktopComputer = createDesktopComputer();
         Laptop laptop = createLaptop();
