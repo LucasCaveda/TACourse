@@ -1,4 +1,4 @@
-package com.solvd.computerShop.runner;
+package com.solvd.computerShop.runners;
 
 import com.solvd.computerShop.computer.DesktopComputer;
 import com.solvd.computerShop.computer.Laptop;

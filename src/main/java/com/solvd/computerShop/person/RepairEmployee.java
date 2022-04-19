@@ -5,6 +5,7 @@ import com.solvd.computerShop.computer.Computer;
 import com.solvd.computerShop.computer.DesktopComputer;
 import com.solvd.computerShop.computer.Laptop;
 import com.solvd.computerShop.enums.GenderType;
+import com.solvd.computerShop.interfaces.CleanProcessor;
 import com.solvd.computerShop.tool.Tool;
 import com.solvd.computerShop.interfaces.ICleanComputer;
 import com.solvd.computerShop.interfaces.IComputerRepair;
@@ -66,7 +67,6 @@ public class RepairEmployee extends Employee implements IComputerRepair, ICleanC
             }
         }
     }
-
 
     @Override
     public void diagnosis(Computer computer) {
@@ -166,5 +166,11 @@ public class RepairEmployee extends Employee implements IComputerRepair, ICleanC
     public void cleanComputer() {
         LOGGER1.debug(this.getFirstName() + "has cleaned the computer.");
     }
+
+    public float clean(float time, CleanProcessor cleanProcessor){
+        float price = cleanProcessor.clean(time);
+        return price;
+    }
 }
+
 

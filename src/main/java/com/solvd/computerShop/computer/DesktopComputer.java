@@ -17,14 +17,10 @@ public class DesktopComputer extends Computer{
         ComputerComponent GPU = new ComputerComponent(true, "RX5500XT");
         ComputerComponent memory = new ComputerComponent(false, "16gb Teamgroup");
         ComputerComponent storage = new ComputerComponent(true, "1tb Seagate");
-
-
         return new DesktopComputer(CPU, GPU, memory, storage, null, null);
     }
 
-    public HashSet<Peripheral> getPeripherals() {
-        return peripherals;
-    }
+    public HashSet<Peripheral> getPeripherals() {return peripherals;}
 
     public void setPeripherals(HashSet<Peripheral> peripherals) {
         this.peripherals = peripherals;

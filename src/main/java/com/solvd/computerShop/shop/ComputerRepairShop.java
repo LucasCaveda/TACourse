@@ -1,11 +1,9 @@
 package com.solvd.computerShop.shop;
 
 import com.solvd.computerShop.generics.GenericLinkedList;
-import com.solvd.computerShop.person.Employee;
+import com.solvd.computerShop.interfaces.WaitTimeProcessor;
 import com.solvd.computerShop.person.ManagerEmployee;
 import com.solvd.computerShop.person.RepairEmployee;
-
-import java.util.Set;
 
 public class ComputerRepairShop extends Shop{
     private ManagerEmployee manager;
@@ -42,5 +40,10 @@ public class ComputerRepairShop extends Shop{
 
     public void setWorkingSpaces(WorkingSpaces workingSpaces) {
         this.workingSpaces = workingSpaces;
+    }
+
+    public float waitTime(int queueSize, int i, WaitTimeProcessor waitTimeProcessor){
+        float timeToWait = waitTimeProcessor.waitTime(queueSize);
+        return timeToWait;
     }
 }
