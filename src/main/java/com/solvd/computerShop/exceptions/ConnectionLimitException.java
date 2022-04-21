@@ -1,8 +1,8 @@
 package com.solvd.computerShop.exceptions;
 
-public class InvalidWord extends RuntimeException{
+public class ConnectionLimitException extends Exception {
     @Override
     public String getMessage() {
-        return "The word cannot have numbers.";
+        return "Limit of threads";
     }
 }

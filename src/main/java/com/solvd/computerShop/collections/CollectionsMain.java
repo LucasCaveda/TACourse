@@ -77,7 +77,7 @@ public class CollectionsMain {
         ManagerEmployee manager = new ManagerEmployee("Florencia", "Salvador", "33415678", 33, GenderType.FEMALE, 0001, 3000, true, true);
 
 
-        GenericLinkedList<RepairEmployee> employees = new GenericLinkedList<>();
+        ArrayList<RepairEmployee> employees = new ArrayList<>();
 
         WorkingSpaces workingSpaces = new WorkingSpaces(4, 4);
 
@@ -93,9 +93,9 @@ public class CollectionsMain {
         ComputerRepairShop computerRepairShop = new ComputerRepairShop("Computer service", "Estrada 1455", manager, employees, workingSpaces);
     }
 
-    public static void assignSpace(WorkingSpaces workingSpaces, GenericLinkedList<RepairEmployee> employees, RepairEmployee employee, int space) {
+    public static void assignSpace(WorkingSpaces workingSpaces, ArrayList<RepairEmployee> employees, RepairEmployee employee, int space) {
         if (workingSpaces.getUnassignedSpaces() > 0) {
-            employees.insertAt(space, employee);
+            employees.add(space, employee);
             workingSpaces.setUnassignedSpaces(workingSpaces.getUnassignedSpaces() - 1);
         } else LOGGER1.info("No more working spaces available");
     }

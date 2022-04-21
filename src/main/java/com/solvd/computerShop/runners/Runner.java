@@ -57,7 +57,7 @@ public class Runner {
         toolsSet.add(gripper);
 
 
-        ComputerRepairShop computerRepairShop = new ComputerRepairShop("Computer service", "Estrada 1455", manager, employees, workingSpaces);
+        //ComputerRepairShop computerRepairShop = new ComputerRepairShop("Computer service", "Estrada 1455", manager, employees, workingSpaces);
 
         Queue<Client> clientQueue = new LinkedList<>();
         clientQueue.add(client1);

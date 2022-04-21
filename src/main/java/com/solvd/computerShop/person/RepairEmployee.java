@@ -167,6 +167,15 @@ public class RepairEmployee extends Employee implements IComputerRepair, ICleanC
         LOGGER1.debug(this.getFirstName() + "has cleaned the computer.");
     }
 
+    @Override
+    public String toString() {
+        return "RepairEmployee{" +
+                "taskQueue=" + taskQueue +
+                ", tools=" + tools +
+                ", repairing=" + repairing +
+                '}';
+    }
+
     public float clean(float time, CleanProcessor cleanProcessor){
         float price = cleanProcessor.clean(time);
         return price;

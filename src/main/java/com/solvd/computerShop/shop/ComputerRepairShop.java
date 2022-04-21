@@ -2,16 +2,19 @@ package com.solvd.computerShop.shop;
 
 import com.solvd.computerShop.generics.GenericLinkedList;
 import com.solvd.computerShop.interfaces.WaitTimeProcessor;
+import com.solvd.computerShop.person.Employee;
 import com.solvd.computerShop.person.ManagerEmployee;
 import com.solvd.computerShop.person.RepairEmployee;
 
+import java.util.ArrayList;
+
 public class ComputerRepairShop extends Shop{
     private ManagerEmployee manager;
-    private GenericLinkedList<RepairEmployee> repairEmployees;
+    private ArrayList<RepairEmployee> repairEmployees;
     private WorkingSpaces workingSpaces;
 
 
-    public ComputerRepairShop(String name, String address, ManagerEmployee manager, GenericLinkedList<RepairEmployee> repairEmployees, WorkingSpaces workingSpaces) {
+    public ComputerRepairShop(String name, String address, ManagerEmployee manager, ArrayList<RepairEmployee> repairEmployees, WorkingSpaces workingSpaces) {
         super(name, address);
         this.manager = manager;
         this.repairEmployees = repairEmployees;
@@ -26,11 +29,11 @@ public class ComputerRepairShop extends Shop{
         this.manager = manager;
     }
 
-    public GenericLinkedList<RepairEmployee> getRepairEmployees() {
+    public ArrayList<RepairEmployee> getRepairEmployees() {
         return repairEmployees;
     }
 
-    public void setRepairEmployees(GenericLinkedList<RepairEmployee> repairEmployees) {
+    public void setRepairEmployees(ArrayList<RepairEmployee> repairEmployees) {
         this.repairEmployees = repairEmployees;
     }
 
@@ -45,5 +48,15 @@ public class ComputerRepairShop extends Shop{
     public float waitTime(int queueSize, int i, WaitTimeProcessor waitTimeProcessor){
         float timeToWait = waitTimeProcessor.waitTime(queueSize);
         return timeToWait;
+    }
+
+    public ArrayList<Employee> getListEmployeesWorking(){
+        ArrayList<Employee> repairEmployeesWorking = new ArrayList<>();
+        for (RepairEmployee r: repairEmployees) {
+            if (r.isWorking()) {
+                repairEmployeesWorking.add(r);
+            }
+        }
+        return repairEmployeesWorking;
     }
 }

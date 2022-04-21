@@ -54,4 +54,12 @@ public class Employee extends Person implements IEmployee {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", salary=" + salary +
+                ", working=" + working +
+                '}';
+    }
 }
