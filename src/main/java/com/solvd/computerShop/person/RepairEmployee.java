@@ -169,11 +169,11 @@ public class RepairEmployee extends Employee implements IComputerRepair, ICleanC
 
     @Override
     public String toString() {
-        return "RepairEmployee{" +
+        return super.toString()+" RepairEmployee=" +
                 "taskQueue=" + taskQueue +
                 ", tools=" + tools +
-                ", repairing=" + repairing +
-                '}';
+                ", repairing=" + repairing
+                ;
     }
 
     public float clean(float time, CleanProcessor cleanProcessor){

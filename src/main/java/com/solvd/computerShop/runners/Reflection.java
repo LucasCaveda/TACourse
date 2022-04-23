@@ -1,6 +1,5 @@
 package com.solvd.computerShop.runners;
 
-
 import com.solvd.computerShop.enums.GenderType;
 import com.solvd.computerShop.person.Employee;
 import org.apache.logging.log4j.LogManager;
@@ -32,7 +31,7 @@ public class Reflection {
                         + " MODIFIERS = " + Modifier.toString(mod));
             });
 
-            //Methdo list of DesktopComputer class
+            //Method list of DesktopComputer class
             LOGGER.debug("-METHODS---------------------------------------");
             Method m[] = cls.getDeclaredMethods();
             IntStream.range(0, m.length).forEach(i -> {
@@ -44,7 +43,7 @@ public class Reflection {
             //Creating new instance using reflection
             Constructor<Employee> constructor = cls.getConstructor(String.class, String.class, String.class, int.class, Enum.class, int.class, int.class, boolean.class);
             Employee employee = constructor.newInstance("Juan", "Acosta", "31344566", 29, GenderType.MALE, 0003, 2500, true);
-            LOGGER.debug("\nConstructor parameters count: " + constructor.getParameterCount());
+            LOGGER.debug("Constructor parameters count: " + constructor.getParameterCount());
 
             //Calling methods using reflection
             Method working = cls.getMethod("working");

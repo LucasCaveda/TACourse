@@ -14,7 +14,7 @@ public class Validations {
         }else return true;
     }
     public static boolean checkWord(String str) throws InvalidWord {
-        Pattern pat = Pattern.compile("[a-zA-Z]\\w{5,29}");
+        Pattern pat = Pattern.compile("[a-zA-Z]\\w{1,29}");
         Matcher mat = pat.matcher(str);
         if (mat.matches()) {
             return true;

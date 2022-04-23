@@ -17,8 +17,8 @@ public class Client {
     public static void main(String[] args) throws InterruptedException {
         ArrayList<Thread> threads = new ArrayList<>();
         //Adding 2 simple threads
-//        threads.add(new SimpleThread("Simple Thread: 1"));
-//        threads.add(new SimpleThread("Simple Thread: 2"));
+        threads.add(new SimpleThread("Simple Thread: 1"));
+        threads.add(new SimpleThread("Simple Thread: 2"));
         for (int i = 0; i < 7; i++) {
             //Adding 5 runnable threads
             threads.add(new Thread(new SimpleRunnable("Runnable Thread: " + i)));
@@ -40,7 +40,5 @@ public class Client {
         Thread.sleep(5000);
 
         connectionPool.disconnect(name);
-
-
     }
 }

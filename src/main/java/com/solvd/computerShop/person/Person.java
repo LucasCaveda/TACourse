@@ -92,4 +92,15 @@ public abstract class Person implements IPerson {
     public void setDni(String dni) {
         this.dni = dni;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "genderType=" + genderType +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dni='" + dni + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

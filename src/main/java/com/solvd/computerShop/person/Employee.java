@@ -56,7 +56,7 @@ public class Employee extends Person implements IEmployee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return super.toString() + " Employee{" +
                 "employeeId=" + employeeId +
                 ", salary=" + salary +
                 ", working=" + working +
