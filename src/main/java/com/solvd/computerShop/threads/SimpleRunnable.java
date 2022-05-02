@@ -1,11 +1,7 @@
 package com.solvd.computerShop.threads;
 
-import com.solvd.computerShop.exceptions.ConnectionLimitException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.logging.Level;
-
 
 
 public class SimpleRunnable implements Runnable {
@@ -21,7 +17,7 @@ public class SimpleRunnable implements Runnable {
     public void run() {
         try {
             Client.createConnection(this.name);
-        } catch (ConnectionLimitException | InterruptedException e) {
+        } catch (InterruptedException e) {
             LOGGER.debug(e.getMessage());
         }
     }

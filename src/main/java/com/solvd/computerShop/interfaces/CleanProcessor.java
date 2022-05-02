@@ -2,5 +2,5 @@ package com.solvd.computerShop.interfaces;
 
 @FunctionalInterface
 public interface CleanProcessor {
-    public abstract float clean(float time);
+    public float clean(float time, float price);
 }

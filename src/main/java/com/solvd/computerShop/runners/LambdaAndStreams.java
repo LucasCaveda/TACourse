@@ -3,6 +3,8 @@ package com.solvd.computerShop.runners;
 import com.solvd.computerShop.computer.DesktopComputer;
 import com.solvd.computerShop.computer.Laptop;
 import com.solvd.computerShop.enums.GenderType;
+import com.solvd.computerShop.interfaces.CleanProcessor;
+import com.solvd.computerShop.interfaces.WaitTimeProcessor;
 import com.solvd.computerShop.person.*;
 import com.solvd.computerShop.shop.ComputerRepairShop;
 import org.apache.logging.log4j.LogManager;
@@ -50,17 +52,25 @@ public class LambdaAndStreams {
 
         ComputerRepairShop computerRepairShop = new ComputerRepairShop("Computer service", "Estrada 1455", manager, employees, null);
 
+        CleanProcessor cleanProcessor = (x, y) -> {
+          float price=x*y;
+            return price;
+        };
 
         IntStream.range(0, clientQueue.size()).forEach(i -> {
             //Price will be different depending on the time used for clean the computer.
             LOGGER.debug("The price of cleaning is $" +
-                    employee1.clean(1.3f + (float) i, (time -> 2 * time)));
+                    cleanProcessor.clean(2,1.3f + (float) i));
         });
 
 
+        WaitTimeProcessor waitTimeProcessor = (x, y) -> {
+            LOGGER.debug("The wait time is about " + x * y);
+        };
+
         IntStream.range(0, clientQueue.size()).forEach(i -> {
             //Calculating about 5 minutes per client
-            LOGGER.debug("The wait time is about " + computerRepairShop.waitTime(clientQueue.size(), i, (queueSize -> 5 * clientQueue.size())));
+            waitTimeProcessor.waitTime(clientQueue.size(), 5);
             clientQueue.remove();
         });
 

@@ -45,11 +45,6 @@ public class ComputerRepairShop extends Shop{
         this.workingSpaces = workingSpaces;
     }
 
-    public float waitTime(int queueSize, int i, WaitTimeProcessor waitTimeProcessor){
-        float timeToWait = waitTimeProcessor.waitTime(queueSize);
-        return timeToWait;
-    }
-
     public ArrayList<Employee> getListEmployeesWorking(){
         ArrayList<Employee> repairEmployeesWorking = new ArrayList<>();
         for (RepairEmployee r: repairEmployees) {

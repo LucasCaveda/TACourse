@@ -1,6 +1,5 @@
 package com.solvd.computerShop.threads;
 
-import com.solvd.computerShop.exceptions.ConnectionLimitException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,7 +32,7 @@ public class Client {
         }
     }
 
-    public static void createConnection(String name) throws ConnectionLimitException, InterruptedException {
+    public static void createConnection(String name) throws InterruptedException {
 
         Connection connection = connectionPool.connect(name);
 

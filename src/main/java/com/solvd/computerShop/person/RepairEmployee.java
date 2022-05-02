@@ -175,11 +175,6 @@ public class RepairEmployee extends Employee implements IComputerRepair, ICleanC
                 ", repairing=" + repairing
                 ;
     }
-
-    public float clean(float time, CleanProcessor cleanProcessor){
-        float price = cleanProcessor.clean(time);
-        return price;
-    }
 }
 
 

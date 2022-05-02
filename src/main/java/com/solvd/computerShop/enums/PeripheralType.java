@@ -1,6 +1,9 @@
 package com.solvd.computerShop.enums;
 
 public enum PeripheralType{
-    OUTPUT,
-    INPUT
+    OUTPUT("send information"),
+    INPUT("receives information");
+
+    PeripheralType(String description){
+    }
 }

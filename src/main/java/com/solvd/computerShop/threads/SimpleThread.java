@@ -1,6 +1,5 @@
 package com.solvd.computerShop.threads;
 
-import com.solvd.computerShop.exceptions.ConnectionLimitException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +16,7 @@ public class SimpleThread extends Thread {
     public void run() {
         try {
             Client.createConnection(this.getName());
-        } catch (ConnectionLimitException | InterruptedException e) {
+        } catch (InterruptedException e) {
             LOGGER.info(e.getMessage());
         }
     }

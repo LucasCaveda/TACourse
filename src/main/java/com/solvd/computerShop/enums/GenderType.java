@@ -1,5 +1,9 @@
 package com.solvd.computerShop.enums;
 
 public enum GenderType {
-    FEMALE, MALE
+    FEMALE("Woman"),
+    MALE("Man");
+
+    GenderType(String type) {
+    }
 }
